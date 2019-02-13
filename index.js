@@ -195,7 +195,6 @@ function parseMediaResponse(res, contentType, url) {
 }
 
 module.exports = (options, callback) => {
-	console.log('OPTIONS', options);
 	if (typeof options === 'string') {
 		options = { url: options };
 	}
