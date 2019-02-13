@@ -4,6 +4,17 @@ Simple web page scraper which returns basic preview info like title, description
 
 This fork of [page-previewer](https://github.com/myspace/page-previewer) is maintained by [Gab AI, Inc](https://gab.com/).
 
+## Changes
+
+The following changes have been made to the module since forking.
+
+### v0.1.3
+
+- Updated request from v2.12.0 to v2.88.0 to address a security concern
+- Accept full request options
+- 'use strict'
+- Code cleanup
+
 ## Install
 
 <pre>
