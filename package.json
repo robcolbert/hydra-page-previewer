@@ -1,6 +1,6 @@
 {
   "name": "hydra-page-previewer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scrapes a web page and returns preview information",
   "private": false,
   "main": "./index.js",
@@ -9,8 +9,8 @@
   },
   "repository": "git://github.com/myspace/page-previewer.git",
   "dependencies": {
-    "request": "2.12.0",
-  	"cheerio": "0.13.1"
+    "cheerio": "0.13.1",
+    "request": "2.12.0"
   },
   "keywords": [
     "page preview",
@@ -20,7 +20,7 @@
   ],
   "author": "Satheesh Natesan",
   "license": {
-  	"type": "MIT",
-  	"url": "https://github.com/myspace/page-previewer/blob/master/LICENSE"
+    "type": "MIT",
+    "url": "https://github.com/myspace/page-previewer/blob/master/LICENSE"
   }
 }
