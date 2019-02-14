@@ -7,7 +7,7 @@
   "scripts": {
     "test": "node test.js"
   },
-  "repository": "git://github.com/myspace/page-previewer.git",
+  "repository": "git://github.com/robcolbert/hydra-page-previewer.git",
   "dependencies": {
     "cheerio": "0.13.1",
     "request": "^2.88.0"
@@ -21,6 +21,6 @@
   "author": "Satheesh Natesan",
   "license": {
     "type": "MIT",
-    "url": "https://github.com/myspace/page-previewer/blob/master/LICENSE"
+    "url": "https://github.com/robcolbert/hydra-page-previewer/blob/master/LICENSE"
   }
 }
