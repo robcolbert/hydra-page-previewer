@@ -43,12 +43,23 @@ function createResponseData (
 	};
 }
 
-function getTitle (doc) {
-	var title = doc("title").text();
-	if ((title === undefined) || !title) {
-		title = doc("meta[property='og:title']").attr("content");
+function getTitle (doc, url) {
+	var title = doc("head title");
+	if (title.length) {
+		return title.text();
 	}
-	return title;
+
+	title = doc("meta[property='og:title']");
+	if (title.length) {
+		return title[0].attr("content");
+	}
+
+	title = doc("title");
+	if (title.length) {
+		return title[0].text();
+	}
+
+	return url.url;
 }
 
 function getDescription (doc) {
@@ -164,7 +175,7 @@ function parseResponse (body, url) {
 		videos;
 
 	doc = cheerio.load(body);
-	title = getTitle(doc);
+	title = getTitle(doc, url);
 
 	description = getDescription(doc);
 

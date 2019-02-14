@@ -8,6 +8,10 @@ This fork of [page-previewer](https://github.com/myspace/page-previewer) is main
 
 The following changes have been made to the module since forking.
 
+### v0.1.5
+
+- Fix page title logic
+
 ### v0.1.3
 
 - Updated request from v2.12.0 to v2.88.0 to address a security concern
