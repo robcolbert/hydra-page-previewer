@@ -103,7 +103,7 @@ function getImages (doc, pageUrl) {
 	if (images.length <= 0) {
 		src = doc("link[rel=image_src]").attr("href");
 		if (src) {
-			src = urlObj.resolve(pageUrl, src);
+			src = urlObj.resolve(typeof pageUrl === 'string' ? pageUrl : pageUrl.url, src);
 			images = [ src ];
 		} else {
 			nodes = doc("img");
@@ -116,7 +116,7 @@ function getImages (doc, pageUrl) {
 						dic[src] = 1;
 						width = node.attribs.width || MIN_IMAGE_SIZE;
 						height = node.attribs.height || MIN_IMAGE_SIZE;
-						src = urlObj.resolve(pageUrl, src);
+						src = urlObj.resolve(typeof pageUrl === 'string' ? pageUrl : pageUrl.url, src);
 						if (width >= MIN_IMAGE_SIZE && height >= MIN_IMAGE_SIZE && !isAdUrl(src)) {
 							images.push(src);
 						}
