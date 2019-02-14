@@ -1,6 +1,6 @@
 {
   "name": "hydra-page-previewer",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Scrapes a web page and returns preview information",
   "private": false,
   "main": "./index.js",
