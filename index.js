@@ -44,22 +44,24 @@ function createResponseData (
 }
 
 function getTitle (doc, url) {
-	var title = doc("head title");
-	if (title.length) {
-		return title.text();
-	}
+	var title;
+	try {
+		title = doc("head title");
+		if (title) {
+			return title.text();
+		}
 
-	title = doc("meta[property='og:title']");
-	if (title.length) {
-		return title[0].attr("content");
-	}
+		title = doc("meta[property='og:title']");
+		if (title) {
+			return title.attr("content");
+		}
 
-	title = doc("title");
-	if (title.text && (typeof title.text === 'function')) {
-		return title.text();
-	}
-	if (title.length) {
-		return title[0].text();
+		title = doc("title");
+		if (title) {
+			return title.text();
+		}
+	} catch (error) {
+		return url.url;
 	}
 
 	return url.url;

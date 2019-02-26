@@ -8,6 +8,9 @@ This fork of [page-previewer](https://github.com/myspace/page-previewer) is main
 
 The following changes have been made to the module since forking.
 
+### v0.1.13
+* title processing fixes
+
 ### v0.1.12
 * validate presence of body
 
