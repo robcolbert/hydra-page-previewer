@@ -214,7 +214,14 @@ function getResponseEncoding (res, body) {
 	}
 
 	var contentTypeComponents = contentType.split(' ');
+	if (!contentTypeComponents || (contentTypeComponents.length < 2)) {
+		return encoding;
+	}
+
 	contentTypeComponents = contentTypeComponents[1].split('=');
+	if (!contentTypeComponents || (contentTypeComponents.length < 2)) {
+		return encoding;
+	}
 
 	var charset = contentTypeComponents[1];
 	if (!charset) {
