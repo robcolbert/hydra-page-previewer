@@ -252,7 +252,9 @@ module.exports = (options, callback) => {
 	});
 
 	var req = request(options, (err, response, body) => {
-		body = body.toString(getResponseEncoding(response, body));
+		if (body) {
+			body = body.toString(getResponseEncoding(response, body));
+		}
 		if (!err && (response.statusCode === 200) && body) {
 			callback(null, parseResponse(body, options));
 		} else {
