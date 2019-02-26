@@ -55,6 +55,9 @@ function getTitle (doc, url) {
 	}
 
 	title = doc("title");
+	if (title.text && (typeof title.text === 'function')) {
+		return title.text();
+	}
 	if (title.length) {
 		return title[0].text();
 	}

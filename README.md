@@ -8,6 +8,12 @@ This fork of [page-previewer](https://github.com/myspace/page-previewer) is main
 
 The following changes have been made to the module since forking.
 
+### v0.1.11
+* fix in getTitle() title element processing
+
+### v0.1.10
+* fix in page parsing for Content-Type
+
 ### v0.1.9
 * getResponseEncoding() added to help determine proper encoding to use for body
 
