@@ -8,6 +8,9 @@ This fork of [page-previewer](https://github.com/myspace/page-previewer) is main
 
 The following changes have been made to the module since forking.
 
+### v0.1.9
+* getResponseEncoding() added to help determine proper encoding to use for body
+
 ### v0.1.5
 
 - Fix page title logic

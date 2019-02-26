@@ -205,16 +205,44 @@ function parseMediaResponse(res, contentType, url) {
 	}
 }
 
+function getResponseEncoding (res, body) {
+	var encoding = 'utf8';
+
+	var contentType = res.headers['content-type'];
+	if (!contentType) {
+		return encoding;
+	}
+
+	var contentTypeComponents = contentType.split(' ');
+	contentTypeComponents = contentTypeComponents[1].split('=');
+
+	var charset = contentTypeComponents[1];
+	if (!charset) {
+		return encoding;
+	}
+
+	charset = charset.toUpperCase();
+	switch (charset) {
+		case 'ISO-8859-1':
+			encoding = 'latin1';
+			break;
+	}
+
+	return encoding;
+}
+
 module.exports = (options, callback) => {
 	if (typeof options === 'string') {
 		options = { url: options };
 	}
 	options = options || { };
 	options = Object.assign(options, {
+		encoding: null, /* return body as buffer */
 		timeout: 10000
 	});
 
 	var req = request(options, (err, response, body) => {
+		body = body.toString(getResponseEncoding(response, body));
 		if (!err && (response.statusCode === 200) && body) {
 			callback(null, parseResponse(body, options));
 		} else {
