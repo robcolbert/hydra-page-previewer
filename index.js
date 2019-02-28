@@ -160,7 +160,7 @@ function getVideos(doc) {
 			videoSecureUrl = nodeSecureUrl ? nodeSecureUrl.attribs.content : null;
 
 			videoObj = { url: video, secureUrl: videoSecureUrl, type: videoType, width: width, height: height };
-			if (videoType.indexOf("video/") === 0) {
+			if (videoType && (videoType.indexOf("video/") === 0)) {
 				videos.splice(0, 0, videoObj);
 			} else {
 				videos.push(videoObj);
